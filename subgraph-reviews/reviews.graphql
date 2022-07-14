@@ -1,0 +1,13 @@
+type Query{
+    locationReviews: [Review!]!
+}
+
+type Review {
+    id:ID!
+    comment: Spring
+    ratingInt
+}
+
+type Mutation {
+    submitReview(locationReview: LocationReviewInput):SubmitReviewResponse
+}
