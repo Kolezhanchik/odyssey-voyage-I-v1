@@ -5,9 +5,23 @@ type Query{
 type Review {
     id:ID!
     comment: Spring
-    ratingInt
+    rating: Int
 }
 
 type Mutation {
     submitReview(locationReview: LocationReviewInput):SubmitReviewResponse
+}
+
+input LocationReviewInput {
+    comment: String!
+    rating: Int!
+    locationId: String!
+}
+
+type SubmitReviewResponse {
+    code: Int
+    success: Boolean
+    message: String!
+    locationReview: Review
+
 }
