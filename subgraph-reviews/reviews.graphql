@@ -1,10 +1,14 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0",
+        import: ["@key"])
+        
 type Query{
-    locationReviews: [Review!]!
+    latestReviews: [Review!]!
 }
 
 type Review {
     id:ID!
-    comment: Spring
+    comment: String
     rating: Int
 }
 
