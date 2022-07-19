@@ -10,6 +10,7 @@ type Review {
     id:ID!
     comment: String
     rating: Int
+    location: Location
 }
 
 type Mutation {
@@ -27,5 +28,10 @@ type SubmitReviewResponse {
     success: Boolean
     message: String!
     locationReview: Review
+}
 
+type Location @key(fields: "id"){
+    id: ID!
+    reviewsForLocation: [Review]!
+    overallRating: Float
 }
